@@ -14,7 +14,7 @@ public class BeerSelect extends HttpServlet{
         List result = be.getBrands(c);
 
 
-        
+        /*
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
         out.println("Beer Selection Advice<br>");
@@ -22,7 +22,12 @@ public class BeerSelect extends HttpServlet{
         Iterator it = result.iterator();
         while(it.hasNext()) {
             out.print("<br>try: " + it.next());
-        }
+        } */
+
+        request.setAttribute("styles",result);
+        RequestDispatcher view = request.getRequestDispatcher("result.jsp");
+
+        view.forward(request,response);
 
     }
 
