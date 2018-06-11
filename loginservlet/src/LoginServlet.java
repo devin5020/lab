@@ -20,10 +20,11 @@ public class LoginServlet extends HttpServlet {
         String html = null;
 
         if ("admin".equals(name) && "123".equals(password))
-            html = "<div style='color:green'>登录成功</div>";
+         //   html = "<div style='color:green'>登录成功</div>";
+            request.getRequestDispatcher("success.html").forward(request,response);
         else
-            html = "<div style='color:red'>登录失败</div>";
-
+           // html = "<div style='color:red'>登录失败</div>";
+        response.sendRedirect("fail.html");
         response.setContentType("text/html; charset=UTF-8"); //html页面解码s
         PrintWriter pw = response.getWriter();
         pw.println(html);
