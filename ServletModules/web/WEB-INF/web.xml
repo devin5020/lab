@@ -7,11 +7,30 @@
         <servlet-name>servlet_down</servlet-name>
         <servlet-class>com.zdy.servlet.servlet_down</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AServlet</servlet-name>
+        <servlet-class>com.zdy.servlet.AServlet</servlet-class>
+        <init-param>
+            <param-name>p1</param-name>
+            <param-value>v1</param-value>
+        </init-param>
+        <init-param>
+            <param-name>p2</param-name>
+            <param-value>v2</param-value>
+        </init-param>
+    </servlet>
 
     <!--   -->
     <servlet-mapping>
         <servlet-name>servlet_down</servlet-name>
         <url-pattern>/servlet_down</url-pattern>
+    </servlet-mapping>
+
+
+    <!--   -->
+    <servlet-mapping>
+        <servlet-name>AServlet</servlet-name>
+        <url-pattern>/AServlet</url-pattern>
     </servlet-mapping>
 
 </web-app>
