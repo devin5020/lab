@@ -27,6 +27,10 @@ public class AServlet extends HttpServlet {
         String value = application.getInitParameter("context-param");
         System.out.println(value);
 
+        //获取web.xml的准确路径
+        String path = this.getServletContext().getRealPath("/WEB-INF/web.xml");
+        System.out.println(path);
+
     }
 
     public void init(ServletConfig servletConfig) throws ServletException {
