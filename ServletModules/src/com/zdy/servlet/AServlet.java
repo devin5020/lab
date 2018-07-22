@@ -2,6 +2,7 @@ package com.zdy.servlet;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
+import javax.servlet.ServletContext;   //context对象
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -16,12 +17,20 @@ public class AServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+        /*演示向servlet context保存数据*/
+        //1 获取servletcontext对象
+        //2 调用其setattribute方法完成保存
+        ServletContext application = this.getServletContext();
+        application.setAttribute( "name", "张三");
+
     }
 
     public void init(ServletConfig servletConfig) throws ServletException {
         System.out.println("init....");
 
-        //获取初始化参数
+
+
+        //使用ServletConfig获取初始化参数
         System.out.println(servletConfig.getInitParameter("p1"));
         System.out.println(servletConfig.getInitParameter("p2"));
 
@@ -31,6 +40,7 @@ public class AServlet extends HttpServlet {
             System.out.println(e.nextElement());
         }
 
+        super.init(servletConfig);
 
     }
 }
