@@ -23,6 +23,10 @@ public class AServlet extends HttpServlet {
         ServletContext application = this.getServletContext();
         application.setAttribute( "name", "张三");
 
+        //使用servletcontext获取参数
+        String value = application.getInitParameter("context-param");
+        System.out.println(value);
+
     }
 
     public void init(ServletConfig servletConfig) throws ServletException {

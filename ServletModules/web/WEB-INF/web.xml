@@ -43,4 +43,10 @@
         <url-pattern>/BServlet</url-pattern>
     </servlet-mapping>
 
+
+    <context-param>
+        <param-name>context-param</param-name>
+        <param-value>context-value</param-value>
+    </context-param>
+
 </web-app>
