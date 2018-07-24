@@ -28,6 +28,15 @@
         <servlet-class>com.zdy.servlet.CServlet</servlet-class>
     </servlet>
 
+
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>com.zdy.servlet.LoginServlet</servlet-class>
+    </servlet>
+
+
+
+
     <!--servlet_down-->
     <servlet-mapping>
         <servlet-name>servlet_down</servlet-name>
@@ -52,11 +61,18 @@
         <url-pattern>/CServlet</url-pattern>
     </servlet-mapping>
 
+    <!--loginservlet-->
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/LoginServlet</url-pattern>
+    </servlet-mapping>
 
 
     <context-param>
         <param-name>context-param</param-name>
         <param-value>context-value</param-value>
     </context-param>
+
+
 
 </web-app>
